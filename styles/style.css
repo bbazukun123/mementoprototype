@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Pridi:300,400');
+
+*,h1,h2,h3
+{
+    font-family: 'Pridi', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Top Banner Block Styling ------------------------------------------ */
+
+.banner
+{
+    width: 100%;
+    background-color: rgba(13, 44, 61, 0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 374px;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1330px) 1fr; 
+}
+
+.banner-text-wrapper
+{
+    grid-column: 2/3;
+    width: 100%;
+    margin: auto;
+    padding: 0 5rem;
+    color: #fff;
+}
+
+.banner-text-wrapper h1
+{
+    font-size: 3.1rem;
+    font-weight: normal;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+.banner-text-wrapper p
+{
+    display: inline-block;
+    /* width: 350px; */
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 35px;
+    text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+/* General Block Styling ------------------------------------------ */
+
+.block
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr minmax(auto, 1330px) 1fr;
+    padding: 4rem 0;
+}
+
+.reset-bottom
+{
+    padding-bottom: 0;
+    margin-bottom: 0; 
+}
+
+.block h1
+{
+    font-size: 1.9rem;
+    font-weight: normal;
+    margin-bottom: 0.3rem;
+}
+
+.block p
+{
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 3.5rem;
+    max-width: 750px;
+}
+
+.block-primary
+{
+    background: #fff;
+}
+
+.block-primary h1
+{
+    color: #152E62;
+}
+
+.block-primary p
+{
+    color: #535863;
+}
+
+.block-secondary
+{
+    background: #152E62;
+}
+
+.block-secondary h1
+{
+    color: #F4896A;
+}
+
+.block-secondary p
+{
+    color: #FFFFFF;
+}
+
+.block-variance
+{
+    background: #f2f2f2;
+}
+
+.block-variance h1
+{
+    color: #152E62;
+}
+
+.block-variance p
+{
+    color: #535863;
+}
+
+.block-wrapper
+{
+    grid-column: 2/3;
+    width: 100%;
+    text-align: center;
+    padding: 0 5rem;
+}
+
+.cta-btn
+{
+    position: relative;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 0.6rem 3.1rem;
+    background: #152E62;
+    border-radius: 0.5rem;
+    box-shadow: 0 1.25rem 1.25rem 0 rgba(0,0,0,0.07);
+    transition: all 0.1s ease-in-out;
+}
+
+.cta-btn:hover
+{
+    transform: scale(1.08, 1.08);
+    background: #F4896A;
+    color: #152E62;
+}
+
+.cta-btn::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 1.25rem 1.25rem -1rem rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.cta-btn:hover::after
+{
+    opacity: 1;
+} 
+
+/* Carousel Styling ------------------------------------------ */
+
+.carousel-wrapper
+{
+    width: 100%;
+    margin-bottom: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.carousel-img
+{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.1);
+}
+
+.carousel-img:first-child
+{
+    grid-column: 1/5;
+    grid-row: 2/6;
+}
+
+.carousel-img:nth-child(2)
+{
+    grid-column: 4/10;
+    grid-row: 1/7;
+    z-index: 1;
+}
+
+.carousel-img:nth-child(3)
+{
+    grid-column: 9/13;
+    grid-row: 2/6;
+}
+
+/* Card Styling ------------------------------------------ */
+
+.cards-wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-gap: calc(2% + 0.3rem) 2%;
+    font-size: 1rem;
+    justify-items: center;
+    margin-bottom: 1.5rem; 
+}
+
+.two-column-wrapper
+{
+    grid-template-columns: repeat(2, minmax(100px,1fr));
+    margin-bottom: 5rem;
+}
+
+.two-column-wrapper .card:nth-child(odd)
+{
+    justify-self: flex-end;
+}
+
+.two-column-wrapper .card:nth-child(even)
+{
+    justify-self: flex-start;
+}
+
+.two-column-wrapper .card.span-card
+{
+    grid-column: span 2;
+    max-width: 49%;
+    justify-self: center;
+    margin-bottom: 2.5em;
+}
+
+.card
+{
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.07);
+    transition: transform 0.1s ease-in-out;
+}
+
+.card:hover
+{
+    transform: scale(1.03, 1.03);
+    cursor: pointer;
+}
+
+.card::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 20px 20px -1rem rgba(0,0,0,0.20);
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.card:hover::after
+{
+    opacity: 1;
+}
+
+.card h1
+{
+    color: #152E62;
+    font-size: 1.9em;
+    font-weight: normal;
+    white-space: nowrap;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+    line-height: 0.8;
+}
+
+.info-card h1
+{
+    margin-top: 0.8em;
+    margin-bottom: 0.1em;
+}
+
+.card h2
+{
+    color: #535863;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+}
+
+.card p
+{
+    color: #535863;
+    font-size: 1.25em;
+    line-height: 1.4;
+    margin-top: 1em;
+    margin-bottom: 1.8em;
+}
+
+.card p span
+{
+    line-height: 1.8;
+    color: #F4896A;
+}
+
+.card-img
+{
+    width: 100%;
+    border-radius: inherit;
+    min-height: 220px;
+    object-fit: cover;
+}
+
+.title-card .card-img,.info-card .card-img
+{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Individual Styling ------------------------------------------ */
+
+.block-hero-img
+{
+    grid-column: 1/5;
+    height: 374px;
+    background-color: rgba(13, 44, 61, 0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.steps-wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-gap: 2%;
+    justify-items: center;
+    align-items: flex-end;
+    margin-bottom: 1.5rem; 
+}
+
+.step-item
+{
+    width: 100%;
+    text-align: center;
+}
+
+.step-item p
+{
+    font-size: 1.5em;
+}
+
+.step-item p span
+{
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.step-icon
+{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.svg-container
+{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+	padding-bottom: 160%;
+	vertical-align: middle; 
+	overflow: hidden;     
+}
+
+/* Responsive Styling ------------------------------------------ */
+
+@media screen and (max-width: 1024px)
+{
+    .cards-wrapper
+    {
+        font-size: 0.8em;
+    }
+
+    .card-img
+    {
+        min-height: 180px;
+    }
+
+    .steps-wrapper
+    {
+        font-size: 0.8rem;
+        grid-template-columns: repeat(auto-fit, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    html
+    {
+        font-size: 14px;
+    }
+
+    .banner
+    {
+        background-blend-mode: darken;
+    }
+
+    .banner-text-wrapper
+    {  
+        text-align: center;
+    }
+
+    .carousel-wrapper
+    {
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+
+    .carousel-img:first-child
+    {
+        grid-row: 1/4;
+        grid-column: 2/6;
+    }
+
+    .carousel-img:nth-child(2)
+    {
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);  
+        grid-row: 3/7;
+        grid-column: 1/7;
+    }
+
+    .carousel-img:nth-child(3)
+    {
+        grid-row: 6/9;
+        grid-column: 2/6;
+    }
+
+    .cards-wrapper
+    {
+        font-size: 0.7rem;
+    }
+
+    .card-img
+    {
+        min-height: 150px;
+    }
+    
+}
+
+@media screen and (max-width: 600px)
+{
+    html
+    {
+        font-size: 12px;
+    }
+    
+    .cards-wrapper
+    {
+        grid-template-columns: 1fr;
+        grid-gap: 2em; 
+        font-size: 1rem;
+    }
+
+    .two-column-wrapper .card:nth-child(odd),.two-column-wrapper .card:nth-child(even)
+    {
+        justify-self: center;
+    }
+
+    .two-column-wrapper .card.span-card
+    {
+        grid-column: span 1;
+        max-width: 80%;
+    }
+
+    .steps-wrapper
+    {
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+    }
+
+    .card
+    {
+        max-width: 80%;
+    }
+    
+    .step-icon
+    {
+        max-width: 50%;
+    }
+
+}
