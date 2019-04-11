@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+html
+{
+    font-size: 16px;
+}
+
 a
 {
     color: #fff;
@@ -229,23 +234,13 @@ a
     margin-bottom: 1.5rem; 
 }
 
-.two-column-wrapper
+.three-two-column-wrapper
 {
-    grid-template-columns: repeat(2, minmax(100px,1fr));
+    grid-template-columns: repeat(3, minmax(100px,1fr));
     margin-bottom: 5rem;
 }
 
-.two-column-wrapper .card:nth-child(odd)
-{
-    justify-self: flex-end;
-}
-
-.two-column-wrapper .card:nth-child(even)
-{
-    justify-self: flex-start;
-}
-
-.two-column-wrapper .card.span-card
+.three-two-column-wrapper .card.span-card
 {
     grid-column: span 2;
     max-width: 49%;
@@ -264,7 +259,6 @@ a
 .card:hover
 {
     transform: scale(1.03, 1.03);
-    cursor: pointer;
 }
 
 .card::after
@@ -368,11 +362,14 @@ a
 {
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .step-item p
 {
     font-size: 1.5em;
+    white-space: nowrap;
 }
 
 .step-item p span
@@ -381,22 +378,20 @@ a
     font-size: 2em;
 }
 
-.step-icon
-{
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .svg-container
 {
     display: inline-block;
-    position: relative;
     width: 100%;
-	padding-bottom: 160%;
-	vertical-align: middle; 
-	overflow: hidden;     
+    align-self: center;
+    overflow: hidden;     
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+.step-icon
+{
+    max-width: 150px;
+    width: 100%;
 }
 
 /* Responsive Styling ------------------------------------------ */
@@ -415,9 +410,14 @@ a
 
     .steps-wrapper
     {
-        font-size: 0.8rem;
-        grid-template-columns: repeat(auto-fit, 1fr);
-        grid-gap: 2rem;
+        font-size: 0.7rem;
+        grid-gap: 1.5rem;
+    }
+
+    .svg-container
+    {  
+        padding: 0.5rem;
+        padding-bottom: 0;
     }
 }
 
@@ -472,6 +472,18 @@ a
     {
         min-height: 150px;
     }
+
+    .steps-wrapper
+    {
+        font-size: 0.8rem;
+        grid-gap: 0.1rem;
+    }
+
+    .svg-container
+    {   
+        padding: 1.5rem;
+        padding-bottom: 0;
+    }
     
 }
 
@@ -479,7 +491,7 @@ a
 {
     html
     {
-        font-size: 12px;
+        font-size: 14px;
     }
     
     .cards-wrapper
@@ -489,31 +501,53 @@ a
         font-size: 1rem;
     }
 
-    .two-column-wrapper .card:nth-child(odd),.two-column-wrapper .card:nth-child(even)
+    .three-two-column-wrapper .card:nth-child(4),.three-two-column-wrapper .card:last-child
     {
         justify-self: center;
     }
 
-    .two-column-wrapper .card.span-card
+    .three-two-column-wrapper .card.span-card
     {
         grid-column: span 1;
         max-width: 80%;
-    }
-
-    .steps-wrapper
-    {
-        grid-template-columns: 1fr;
-        grid-gap: 2em;
     }
 
     .card
     {
         max-width: 80%;
     }
-    
-    .step-icon
+
+    .steps-wrapper
     {
-        max-width: 50%;
+        grid-template-columns: 1fr;
+        font-size: 1.2rem;
+        grid-gap: 1rem;
+        margin-bottom: 4rem;
+    }   
+
+    .svg-container
+    {   
+        max-width: 40%;
+        padding: 1rem;
     }
 
+}
+
+@media screen and (max-width: 480px)
+{
+    html
+    {
+        font-size: 14px;
+    }
+
+    .card
+    {
+        max-width: 100%;
+    }
+
+    .svg-container
+    {   
+        max-width: 70%;
+        padding: 1rem;
+    }
 }
