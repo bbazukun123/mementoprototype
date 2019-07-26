@@ -1,4 +1,8 @@
-index.html
 /images
 /resources/fonts
 /styles/styleHome.css
+Old_Stuff
+node_modules
+.cache
+.vscode
+gulpfile.js

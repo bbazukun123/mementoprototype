@@ -1,0 +1,35 @@
+{
+  "name": "mementowebdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp cleanAll && gulp syncLandings && concurrently --kill-others \"parcel src/index.html\" \"gulp\"",
+    "build": "gulp cleanAll && parcel build src/index.html --public-url . && gulp buildLandings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbazukun123/mementoprototype.git"
+  },
+  "author": "Chanodom Utsahajit <bzkwork1993@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbazukun123/mementoprototype/issues"
+  },
+  "homepage": "https://github.com/bbazukun123/mementoprototype#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "autoprefixer": "^9.6.0",
+    "concurrently": "^4.1.1",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5"
+  }
+}
